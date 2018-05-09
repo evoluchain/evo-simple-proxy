@@ -8,29 +8,29 @@ contract('SimpleLib', accounts => {
             .then(instance => assert.isTrue(!!instance.address))
     })
 
-    it.skip("should SimpleLib default value to 0", () => {
-        let SimpleLib
-        return SimpleLib.deployed()
-            .then(instance => SimpleLib = instance)
-            .then(() => SimpleLib.libCall())
-            .then(result => assert.equal(result.logs[0].args.totoLog.valueOf(), 0))
-            .then(() => SimpleLib.libCall.call())
+    it("should SimpleLib default value to 0", () => {
+        let simpleLib
+        return SimpleLib.new(0)
+            .then(instance => simpleLib = instance)
+            //.then(() => simpleLib.getVersion())
+            //.then(result => assert.equal(result.logs[0].args.totoLog.valueOf(), 0))
+            .then(() => simpleLib.getVersion.call())
             .then(result => assert.equal(result.valueOf(), 0))
     })
 
-    it.skip("should SimpleLib set default value to 12345", () => {
-        let SimpleLib
+    it("should SimpleLib set default value to 12345", () => {
+        let simpleLib
         return SimpleLib.new(12345)
-            .then(instance => SimpleLib = instance)
-            .then(() => SimpleLib.libCall())
-            .then(result => assert.equal(result.logs[0].args.totoLog.valueOf(), 12345))
-            .then(() => SimpleLib.libCall.call())
+            .then(instance => simpleLib = instance)
+            //.then(() => simpleLib.libCall())
+            //.then(result => assert.equal(result.logs[0].args.totoLog.valueOf(), 12345))
+            .then(() => simpleLib.getVersion.call())
             .then(result => assert.equal(result.valueOf(), 12345))
     })
 
-    it.skip("should SimpleLib returns default value", () => {
+    it("should SimpleLib returns default value", () => {
         return SimpleLib.new(12345)
-            .then(instance => instance.libCall.call())
+            .then(instance => instance.getVersion.call())
             .then(result => assert.equal(result.valueOf(), 12345))
     })
 
