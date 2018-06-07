@@ -11,7 +11,7 @@ contract SimpleLib is Ownable {
       version = _version;
     }
 
-  function getVersion() public returns(uint value) {
+  function getVersion() public view returns(uint value) {
       return version;
     }
 
