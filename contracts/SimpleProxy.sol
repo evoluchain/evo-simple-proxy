@@ -12,12 +12,12 @@ contract SimpleProxy is Ownable {
     }
 
   function setLib(address _lib) public onlyOwner {
-        lib = _lib;
+      lib = _lib;
     }
 
-  function getVersion() public returns(uint value) {
-        uint version = SimpleLib(lib).getVersion();
-        return version;
+  function getVersion() public view returns(uint value) {
+      uint version = SimpleLib(lib).getVersion();
+      return version;
     }
 
 }
