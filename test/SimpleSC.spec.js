@@ -3,7 +3,7 @@ var SimpleLib = artifacts.require("./SimpleLib.sol");
 var SimpleSC = artifacts.require("./SimpleSC.sol");
 
 contract("SimpleSC", accounts => {
-  it.only("should use update from simpleCS", () => {
+  it("should use update from simpleCS", () => {
     const LIB_PARAM_1 = 12345;
     const LIB_PARAM_2 = 67890;
     let libAddress1, libAddress2, simpleProxy, simpleSC;
