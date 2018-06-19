@@ -13,7 +13,7 @@
     "ethereumjs-wallet": "^0.6.0",
     "ethjs-query": "^0.3.3",
     "expect": "^22.1.0",
-    "openzeppelin-solidity": "1.9.0",
+    "openzeppelin-solidity": "1.10.0",
     "truffle-wallet-provider": "github:crypedit/truffle-wallet-provider"
   }
 }
